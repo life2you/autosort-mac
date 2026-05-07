@@ -1,0 +1,20 @@
+[package]
+name = "mac-file-auto-sort"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Automatically organize Desktop and Downloads files on macOS"
+repository = "https://github.com/life2you/autosort-mac"
+
+[[bin]]
+name = "autosort-mac"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+dirs = "5"
+notify = "6"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
