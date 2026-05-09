@@ -1,14 +1,23 @@
 class AutosortMac < Formula
   desc "Automatically organize Desktop and Downloads files on macOS"
   homepage "https://github.com/life2you/autosort-mac"
-  url "https://github.com/life2you/autosort-mac/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "96772fd3737003e31e779faff940744b28e4beb0405c189c427fc7f3d602c3b4"
+  version "0.1.0"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/life2you/autosort-mac/releases/download/v0.1.0/autosort-mac-aarch64-apple-darwin.tar.gz"
+      sha256 "REPLACE_WITH_ARM64_SHA256"
+    end
+
+    on_intel do
+      url "https://github.com/life2you/autosort-mac/releases/download/v0.1.0/autosort-mac-x86_64-apple-darwin.tar.gz"
+      sha256 "REPLACE_WITH_X64_SHA256"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    bin.install "autosort-mac"
   end
 
   test do

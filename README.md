@@ -122,50 +122,9 @@ skip_open_files = true
 ~/FileAutoSort/png/2026-05-07/image.png
 ```
 
-## 发布到 GitHub Release 和 Homebrew
+## Release
 
-1. 修改 `Cargo.toml` 版本号。
-2. 创建并推送 tag：
-
-```bash
-git tag v0.1.0
-git push origin main --tags
-```
-
-3. 在 GitHub 创建 release。
-4. 更新 Homebrew formula：
-
-```bash
-./scripts/update-homebrew-formula.sh v0.1.0 life2you
-```
-
-5. 提交更新后的 formula。
-6. 用户通过 Homebrew 安装：
-
-```bash
-brew tap life2you/tap
-brew install autosort-mac
-```
-
-也可以直接使用本地 formula：
-
-```bash
-brew install ./homebrew/autosort-mac.rb
-```
-
-## 脚本
-
-构建 release：
-
-```bash
-./scripts/build-release.sh
-```
-
-如果脚本没有执行权限，请运行：
-
-```bash
-chmod +x scripts/build-release.sh scripts/update-homebrew-formula.sh
-```
+发布步骤详见 [RELEASING.md](/Users/life2you/vibeCodes/github/autosort-mac/RELEASING.md)。
 
 ## 注意事项
 
